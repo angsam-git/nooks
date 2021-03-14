@@ -56,7 +56,7 @@ $ git clone https://github.com/alazsengul/nooks.git
 Install the required gems in the `nooks` directory.
 
 ```bash
-$ git clone https://github.com/alazsengul/nooks.git
+$ bundle install
 ```
 
 Install the JavaScript packages in the `nooks` directory.
