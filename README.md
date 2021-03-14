@@ -1,7 +1,3 @@
-# Nooks
-
-Nooks is a web app that helps make apartment hunting easier.
-
 ## Installations
 
 Make sure you have the following already installed.
