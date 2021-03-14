@@ -45,6 +45,26 @@ $ yarn --version
 
 If it says something like "1.22.0", Yarn has been installed correctly.
 
+## Getting Started
+
+Navigate to a desired directory and clone this repo.
+
+```bash
+$ git clone https://github.com/alazsengul/nooks.git
+```
+
+Install the required gems in the `nooks` directory.
+
+```bash
+$ git clone https://github.com/alazsengul/nooks.git
+```
+
+Install the JavaScript packages in the `nooks` directory.
+
+```bash
+$ yarn
+```
+
 ## Starting up the Web Server
 
 Run the following command in the `nooks` directory, open a browser window, and navigate to http://localhost:3000.
