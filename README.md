@@ -4,7 +4,7 @@ Make sure you have the following already installed.
 
 ### Installing Ruby
 
-Check to see if you have Ruby version 2.5.0 or later.
+Check to see if you have Ruby version `2.5.0` or later.
 
 ```bash
 $ ruby --version
@@ -33,7 +33,7 @@ Find the installation instructions at the [Node.js website](https://nodejs.org/e
 $ node --version
 ```
 
-The version of your Node.js runtime should be printed out. Make sure it's greater than 8.16.0.
+The version of your Node.js runtime should be printed out. Make sure it's greater than `8.16.0`.
 
 To install Yarn, follow the installation instructions at the [Yarn website](https://classic.yarnpkg.com/en/docs/install).
 
