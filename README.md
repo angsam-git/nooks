@@ -1,24 +1,58 @@
-# README
+# Nooks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nooks is a web app that helps make apartment hunting easier.
 
-Things you may want to cover:
+## Installations
 
-* Ruby version
+Make sure you have the following already installed.
 
-* System dependencies
+### Installing Ruby
 
-* Configuration
+Check to see if you have Ruby version 2.5.0 or later.
 
-* Database creation
+```bash
+$ ruby --version
+ruby 2.5.0
+```
 
-* Database initialization
+If not, look through [hw-setup](http://www.cs.columbia.edu/~junfeng/21sp-w4156/assignments.html#hw-setup) for help installing Ruby.
 
-* How to run the test suite
+### Installing SQLite3
 
-* Services (job queues, cache servers, search engines, etc.)
+You will also need an installation of the SQLite3 database. Verify that it is correctly installed, as the program should report its version.
 
-* Deployment instructions
+```bash
+$ sqlite3 --version
+```
 
-* ...
+If not, look at the [SQLite3 website](https://www.sqlite.org/) to find installation instructions.
+
+### Installing Node.js and Yarn
+
+Finally, you'll need Node.js and Yarn installed to manage your application's JavaScript.
+
+Find the installation instructions at the [Node.js website](https://nodejs.org/en/download/) and verify it's installed correctly.
+
+```bash
+$ node --version
+```
+
+The version of your Node.js runtime should be printed out. Make sure it's greater than 8.16.0.
+
+To install Yarn, follow the installation instructions at the [Yarn website](https://classic.yarnpkg.com/en/docs/install).
+
+Running the following command should print out Yarn version.
+
+```bash
+$ yarn --version
+```
+
+If it says something like "1.22.0", Yarn has been installed correctly.
+
+## Starting up the Web Server
+
+Run the following command in the `nooks` directory, open a browser window, and navigate to http://localhost:3000.
+
+```bash
+$ bin/rails server
+```
