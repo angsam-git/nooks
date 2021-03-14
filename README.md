@@ -43,7 +43,7 @@ Running the following command should print out Yarn version.
 $ yarn --version
 ```
 
-If it says something like "1.22.0", Yarn has been installed correctly.
+If it says something like `1.22.0`, Yarn has been installed correctly.
 
 ## Getting Started
 
