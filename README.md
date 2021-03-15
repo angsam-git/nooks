@@ -1,8 +1,11 @@
 ## Team
 
 Angel Samuel Mendez - asm2265
+
 Cameron Miller - cm3959
+
 Alaz Sengul - as5456
+
 Alice Zhang - ayz2105
 
 ## Installations
