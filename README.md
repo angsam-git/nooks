@@ -65,6 +65,22 @@ Install the JavaScript packages in the `nooks` directory.
 $ yarn
 ```
 
+## Running the Database Migration
+
+Run the following command in the `nooks` directory to setup the database.
+
+```bash
+$ bin/rails db:migrate
+```
+
+## Loading the Seed Data
+
+Run the following command in the `nooks` directory to seed the database with default values.
+
+```bash
+$ bin/rails db:seed
+```
+
 ## Starting up the Web Server
 
 Run the following command in the `nooks` directory, open a browser window, and navigate to http://localhost:3000.
