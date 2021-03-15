@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
@@ -21,6 +21,19 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# gem 'rspec-rails', '3.7.2' # added
+# gem 'factory_bot_rails'    # added
+gem 'rspec'
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+
+
+# # added
+# group :test do
+#   gem 'cucumber-rails', :require => false
+#   gem 'cucumber-rails-training-wheels'
+#   gem 'simplecov', :require => false
+# end
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
