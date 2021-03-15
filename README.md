@@ -1,3 +1,10 @@
+## Team
+
+Angel Samuel Mendez - asm2265
+Cameron Miller - cm3959
+Alaz Sengul - as5456
+Alice Zhang - ayz2105
+
 ## Installations
 
 Make sure you have the following already installed.
@@ -88,3 +95,11 @@ Run the following command in the `nooks` directory, open a browser window, and n
 ```bash
 $ bin/rails server
 ```
+
+## Heroku
+
+
+
+## GitHub
+
+https://github.com/alazsengul/nooks
