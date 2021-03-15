@@ -1,0 +1,35 @@
+<table class="table table-striped col-md-12" id="apartments">
+    <thead>
+        <tr>
+        <th>Address</th>
+        <th>Monthly Rent</th>
+        <th>Number of Bedrooms</th>
+        <th>Number of Bathrooms</th>
+        <th>Sq. Feet</th>
+        <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @apartments.each do |apartment| %>
+        <tr>
+            <td>
+            <%= apartment.address %>
+            </td>
+            <td><%= apartment.mo_rent %></td>
+            <td>
+            <%= apartment.num_beds %>
+            </td>
+            <td>
+            <%= apartment.num_baths %>
+            </td>
+            <td>
+            <%= apartment.sq_ft %>
+            </td>
+            <td>
+            <%= link_to "Link", apartment.url %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
