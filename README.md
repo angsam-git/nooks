@@ -1,3 +1,13 @@
+## Team
+
+Angel Samuel Mendez - asm2265
+
+Cameron Miller - cm3959
+
+Alaz Sengul - as5456
+
+Alice Zhang - ayz2105
+
 ## Installations
 
 Make sure you have the following already installed.
@@ -65,6 +75,22 @@ Install the JavaScript packages in the `nooks` directory.
 $ yarn
 ```
 
+## Running the Database Migration
+
+Run the following command in the `nooks` directory to setup the database.
+
+```bash
+$ bin/rails db:migrate
+```
+
+## Loading the Seed Data
+
+Run the following command in the `nooks` directory to seed the database with default values.
+
+```bash
+$ bin/rails db:seed
+```
+
 ## Starting up the Web Server
 
 Run the following command in the `nooks` directory, open a browser window, and navigate to http://localhost:3000.
@@ -72,3 +98,11 @@ Run the following command in the `nooks` directory, open a browser window, and n
 ```bash
 $ bin/rails server
 ```
+
+## Heroku
+
+http://boiling-citadel-22563.herokuapp.com/
+
+## GitHub
+
+https://github.com/alazsengul/nooks
