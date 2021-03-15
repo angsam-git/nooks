@@ -6,10 +6,10 @@ describe ApplicationRecord, type: :controller do
 	let!(:apt1) { FactoryBot.create(:ApplicationRecord, address: '61 E 77st St, New York, NY 10075', rent: 6981.0, beds: 1, bath: 2, sqft: 49000) }
 
 	context '...' do
-      it '...' do
-        # expect(ApplicationRecord.find_all...
+      		it '...' do
+        		# expect(ApplicationRecord.find_all...
         
-      end
-    end
+      		end
+    	end
 
 end
