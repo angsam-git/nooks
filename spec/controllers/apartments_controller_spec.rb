@@ -10,7 +10,7 @@ describe ApartmentsController, type: :controller do
 
 		context 'An apartment listing has been added to the DB' do
 	      		it 'should appear on the apartments page' do
-	        		expect('apartments').to have_content(apt1.title)
+	        		expect(page).to have_content(apt1.title)
 	      		end
 	    end
 
