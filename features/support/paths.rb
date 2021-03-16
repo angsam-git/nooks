@@ -13,7 +13,7 @@ module NavigationHelpers
     def path_to(page_name)
       case page_name
   
-      when /^the (Nooks )?apartment\s?page$/ then '/apartments'
+      when /^the (Nooks )?apartments\s?page$/ then '/apartments'
 
       else
         begin
