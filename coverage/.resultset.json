@@ -1,0 +1,141 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/angel/nooks/app/models/apartment.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/controllers/apartments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/helpers/apartments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/helpers/pages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/angel/nooks/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/angel/nooks/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/angel/nooks/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/angel/nooks/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/angel/nooks/app/controllers/pages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1615864939
+  }
+}
