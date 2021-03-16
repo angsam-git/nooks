@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ApartmentsController, type: :controller do
-
 	describe "Apartments" do
 		
 		let!(:apt1) { FactoryBot.create(:Apartment, address: '4 E 51st St, New York, NY 10022', rent: 6170.0, beds: 2, bath: 2, sqft: 150000) }
@@ -12,6 +11,7 @@ describe ApartmentsController, type: :controller do
 	      		it 'should appear on the apartments page' do
 	        		expect(page).to have_content(apt1.title)
 	      		end
-	    end
-
+	    	end
+		
+	end
 end
