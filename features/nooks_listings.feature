@@ -15,9 +15,20 @@ Background: apartments in database
     | 315 W 57th St, New York, NY 10022   | 3000.0  | 1        | 1.0       | 150   |
 
 
-    And I am on the Nooks apartment page
+    And I am on the Nooks apartments page
     Then I should see all the apartments
 
-Scenario:
-    Given I am on the Nooks apartment page
+Scenario: find all apartments in apartments page
+    Given I am on the Nooks apartments page
     Then I should see all the apartments
+
+Scenario: add an apartment to the apartments page
+    Given I am on the Nooks apartments page
+    When I press "Add Apartment"
+    And I fill in "Address" with "311 W 84th St, New York, NY"
+    And I fill in "Monthly Rent" with "2200.0"
+    And I fill in "Sq. Ft" with "250"
+    And I fill in "Bedrooms" with "1"
+    And I fill in "Bathrooms" with "1"
+    And I press "Add"
+    Then I should see "311 W 84th St, New York, NY"
