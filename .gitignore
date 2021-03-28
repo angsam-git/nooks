@@ -14,3 +14,4 @@ node_modules
 /tmp
 log
 .byebug_history
+.DS_Store
