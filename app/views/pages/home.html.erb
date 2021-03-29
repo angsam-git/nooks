@@ -8,32 +8,36 @@
         </div>
     </nav>
 
-    <div class="grid grid-cols-1 gap-4 max-w-screen-2xl mx-auto px-8 pt-4 pb-8">
-        <div class="rounded-md border p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-0 max-w-screen-2xl mx-auto p-8">
+        <div class="rounded-md border p-8 lg:max-w-lg mx-auto min-w-full lg:min-w-min">
             <p class="inline-block font-medium text-sm text-green-700 bg-green-100 rounded-md px-2 py-1 mb-4">
                 Starting your apartment search?
             </p>
-            <h1 class="text-xl font-bold mb-1">
+            <h1 class="text-xl font-bold">
                 Create a group.
             </h1>
             <p class="text-gray-400 mb-4">
                 Pick a name that can be accessed publicly by people in your group.
             </p>
-            <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-green-500 focus:ring-green-500 mb-4" placeholder="i.e. nycbuds2021">
-            <button type="submit" class="block w-full rounded-md border border-transparent px-3 py-3 bg-green-600 text-base font-medium text-white shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Create group</button>
+            <div class="sm:flex md:block">
+                <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-green-500 focus:ring-green-500 mb-4 sm:mb-0 md:mb-4" placeholder="i.e. nycbuds2021">
+                <button class="min-w-max flex-1 block w-full rounded-md border border-transparent px-12 py-3 bg-green-600 text-base font-medium text-white shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-4 md:ml-0">Create group</button>
+            </div>
         </div>
-        <div class="rounded-md border p-8">
+        <div class="rounded-md border p-8 lg:max-w-lg mx-auto min-w-full lg:min-w-min">
             <p class="inline-block font-medium text-sm text-blue-700 bg-blue-100 rounded-md px-2 py-1 mb-4">
                 Already created a group?
             </p>
-            <h1 class="text-xl font-bold mb-1">
+            <h1 class="text-xl font-bold">
                 Access your group apartments.
             </h1>
             <p class="text-gray-400 mb-4">
                 Enter in the unique group name you created to view and edit your existing apartments.
             </p>
-            <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 mb-4" placeholder="i.e. nycbuds2021">
-            <button type="submit" class="block w-full rounded-md border border-transparent px-3 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Access group</button>
+            <div class="sm:flex md:block">
+                <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 mb-4 sm:mb-0 md:mb-4" placeholder="i.e. nycbuds2021">
+                <button class="min-w-max flex-1 sm:ml-4 block w-full rounded-md border border-transparent px-12 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:ml-4 md:ml-0">Access group</button>
+            </div>
         </div>
     </div>
 </div>
