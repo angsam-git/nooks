@@ -3,7 +3,9 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    @apartments = Apartment.all
+    @group = Group.find params[:group_id]
+    @apartments = Apartment.where(group_id: params[:group_id])
+    # @apartments = Apartment.all
   end
 
   def new

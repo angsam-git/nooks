@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :apartments
+  resources :groups do
+    resources :apartments
+  end
 end
