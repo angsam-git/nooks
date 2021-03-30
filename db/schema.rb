@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_020953) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id"
+    t.integer "group_id", null: false
     t.index ["group_id"], name: "index_apartments_on_group_id"
   end
 
