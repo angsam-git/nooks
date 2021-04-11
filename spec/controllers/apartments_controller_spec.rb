@@ -7,7 +7,7 @@ describe ApartmentsController, type: :controller do
 		let!(:apt2) { FactoryBot.create(:Apartment, address: '61 E 77st St, New York, NY 10075', rent: 6981.0, beds: 1, bath: 2, sqft: 49000, groupid: "id2") }
 
 
-	    context 'A group created a new group id'
+	    context 'A group created a new group id' do
 			it 'there should exist a corresponding route' do
 				expect(get("/id1")).to route_to("pages#id1")
 			end
