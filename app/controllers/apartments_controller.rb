@@ -3,7 +3,8 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    @apartments = Apartment.all
+    @group = Group.find params[:group_id]
+    @apartments = @group.apartments
   end
 
   def new
@@ -11,8 +12,9 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    @apartment = Apartment.create!(apartment_params)
-    redirect_to apartments_path
+    @group = Group.find params[:group_id]
+    @apartment = Apartment.create(apartment_params)
+    redirect_to group_apartments_path(@group)
   end
 
   def edit
