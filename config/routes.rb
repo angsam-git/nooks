@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'apartments/index'
 
+  get 'apartments/:id', to: 'pages#:id'
+
   resources :groups do
     resources :apartments
   end
