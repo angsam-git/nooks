@@ -1,10 +1,28 @@
 class GroupsController < ApplicationController
     def show
-        @group = Group.find params[:id]
-        redirect_to group_apartments_path(@group)
+      # if Group.exists?(:name => params[:name])
+      #   @group = Group.find_by_name params[:name]
+      #   redirect_to group_apartments_path(@group)
+      # else
+      # end
+      # @group = Group.find_by_name "Group 1"
+      # redirect_to group_apartments_path(@group)
     end
+
+    def search
+      if Group.exists?(name: params[:group][:name])
+        @group = Group.find_by_name params[:group][:name]
+        params[:group][:id] = @group.id
+        redirect_to group_apartments_path(@group)
+      else
+      end
+   end
   
     def index
+      # if params[:name]
+      #   @group = Group.find_by_name params[:name]
+      #   redirect_to group_apartments_path(@group)
+      # end
       redirect_to root_path
     end
   
@@ -13,8 +31,12 @@ class GroupsController < ApplicationController
     end
   
     def create
-      @group = Group.create!(group_params)
-      redirect_to groups_path
+      if !Group.exists?(:name => params[:group][:name])
+        @group = Group.create!(group_params)
+        redirect_to group_apartments_path(@group)
+      else
+      end
+      
     end
   
     def edit
@@ -24,7 +46,7 @@ class GroupsController < ApplicationController
     def update
       @group = Group.find params[:id]
       @group.update_attributes!(group_params)
-      redirect_to group_path(@group)
+      redirect_to group_apartments_path(@group)
     end
   
     def destroy
