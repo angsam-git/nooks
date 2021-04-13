@@ -1,12 +1,4 @@
-<div class="bg-white">
-    <nav class="border-b">
-        <div class="max-w-screen-2xl mx-auto px-8 py-4">
-            <div class="flex items-center space-x-2">
-                <img class="h-8 w-auto" src="images/logo-buildings.svg" alt="Buildings">
-                <img class="h-5 w-auto" src="images/logo-nooks.svg" alt="Nooks">
-            </div>  
-        </div>
-    </nav>
+<div class="bg-white" x-data="{ open: false }">
     <div class="space-y-8 p-8">
         <div class="flex flex-col sm:flex-row max-w-screen-2xl sm:space-x-8 mx-auto">
             <div class="flex justify-between items-center sm:w-1/2 rounded-md border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700 p-4 mb-8 sm:m-0">
@@ -17,14 +9,14 @@
                     <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
                 </svg>
             </div>
-            <div class="flex justify-between items-center sm:w-1/2 rounded-md border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 p-4">
+            <button class="flex justify-between items-center sm:w-1/2 rounded-md border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 p-4" @click="open = true">
                 <h1 class="text-lg font-bold">
                     Add Apartment
                 </h1>
                 <svg class="h-6 w-6 text-blue-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                 </svg>
-            </div>
+            </button>
         </div>
         <div class="flex flex-col max-w-screen-2xl mx-auto">
             <div class="overflow-x-auto rounded-md border">
@@ -46,9 +38,9 @@
                             <th scope="col" class=" w-2/12 p-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Sq Ft
                             </th>
-                            <th scope="col" class="w-1/12 p-4">
+                            <!--<th scope="col" class="w-1/12 p-4">
                                 <span class="sr-only">Edit</span>
-                            </th>
+                            </th>-->
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
@@ -57,7 +49,8 @@
                         <tr>
                             <td class="px-4 py-8 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
                                 <p class="inline-block font-medium text-sm text-gray-900 bg-gray-100 rounded-md px-2 py-1">
-                                    <%= link_to "#{apartment.address}", apartment.url %>
+                                    
+                                    <a href="<%= apartment.url %>"><%= apartment.address %></a>
                                 </p>
                             </td>
                             <td class="px-4 py-8 whitespace-nowrap text-sm text-gray-500 text-center">
@@ -74,17 +67,66 @@
                             <td class="px-4 py-8 whitespace-nowrap text-sm text-gray-500 text-center">
                                 <%= apartment.sq_ft %>
                             </td>
-                            <td class="px-4 py-8 whitespace-nowrap text-sm font-medium text-center">
+                            <!--<td class="px-4 py-8 whitespace-nowrap text-sm font-medium text-center">
                                 <a href="#" class="text-blue-700 hover:text-blue-900">Edit</a>
-                            </td>
+                            </td>-->
                         </tr>
                     <% end %>
                     </tbody>
                 </table>
             </div>
         </div>
+        
 
+        <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="open">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0" @click.away="open = false">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full sm:p-6">
+                        <div class="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+                            <button @click="open = false" type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <form action="/groups/<%= @group.id %>/apartments" method="post">
+                            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                            <input type="hidden" id="group_id" name="apartment[group_id]" value="<%= @group.id %>" />
+                            <div class="flex flex-col mb-2">
+                                <label class="mb-2 font-bold text-lg text-grey-darkest" for="address">Address</label>
+                                <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. 421 51st St, New York, NY 10022" id="address" name="apartment[address]">
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-col mb-2">
+                                    <label class="mb-2 font-bold text-lg text-grey-darkest" for="mo_rent">Monthly Rent</label>
+                                    <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. 4350" id="mo_rent" name="apartment[mo_rent]">
+                                </div>
+                                <div class="flex flex-col mb-2">
+                                    <label class="mb-2 font-bold text-lg text-grey-darkest" for="sq_ft">Sq. Ft</label>
+                                    <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. 2100" id="sq_ft" name="apartment[sq_ft]">
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-col mb-2">
+                                    <label class="mb-2 font-bold text-lg text-grey-darkest" for="num_beds">Bedrooms</label>
+                                    <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. 3" id="num_beds" name="apartment[num_beds]">
+                                </div>
+                                <div class="flex flex-col mb-2">
+                                    <label class="mb-2 font-bold text-lg text-grey-darkest" for="num_baths">Bathrooms</label>
+                                    <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. 1.5" id="num_baths" name="apartment[num_baths]">
+                                </div>
+                            </div>
+                            <div class="flex flex-col mb-2">
+                                <label class="mb-2 font-bold text-lg text-grey-darkest" for="url">URL</label>
+                                <input class="w-full border rounded-md px-3 py-3 placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:mb-0 md:mb-4" placeholder="i.e. www.zillow.com/61-E-77th-St-New-York-NY-10075/" id="url" name="apartment[url]">
+                            </div>
+                            <button class="min-w-max flex-1 block w-full rounded-md border border-transparent px-12 py-3 bg-blue-600 text-base font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" type="submit">Add apartment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </div>
-
-
 </div>

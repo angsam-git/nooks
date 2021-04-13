@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 apartments = Apartment.create([
     { address:'420 E 51st St, New York, NY 10022', mo_rent: 6170.00, num_beds: 2, num_baths: 2.00, sq_ft:150000, url: 'https://www.zillow.com/homedetails/420-E-51st-St-New-York-NY-10022/31532394_zpid/?' , group_id: 1},

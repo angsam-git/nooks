@@ -12,6 +12,8 @@ class ApartmentsController < ApplicationController
   end
 
   def create
+    puts "hello"
+    puts apartment_params
     @group = Group.find params[:group_id]
     @apartment = Apartment.create(apartment_params)
     redirect_to group_apartments_path(@group)
