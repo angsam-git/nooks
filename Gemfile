@@ -22,6 +22,7 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'factory_bot'
 gem 'factory_bot_rails'    # added
+gem 'rails-controller-testing' #added for rspec testing
 
 
 # added
