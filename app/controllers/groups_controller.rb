@@ -10,9 +10,6 @@ class GroupsController < ApplicationController
     end
 
     def search
-      print "****** group params ****"
-      print "#{group_params}"
-      print "******"
       if Group.exists?(name: params[:group][:name])
         @group = Group.find_by_name params[:group][:name]
         params[:group][:id] = @group.id
