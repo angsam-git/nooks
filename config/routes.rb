@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :apartments
   end
+
+  post 'search' => 'groups#search'
+
 end
