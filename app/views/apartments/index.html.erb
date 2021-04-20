@@ -18,6 +18,14 @@
                 </svg>
             </button>
         </div>
+        <iframe 
+            width= 100%
+            height="300" 
+            style = "border:0"
+            loading="lazy"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyApAIo4jTXVTF0H1v5Djq8zBS3yUR1tgX0&q=New+York" 
+            allowfullscreen>
+        </iframe>
         <div class="flex flex-col max-w-screen-2xl mx-auto">
             <div class="overflow-x-auto rounded-md border">
                 <table class="table-fixed min-w-full divide-y divide-gray-200">
@@ -55,7 +63,11 @@
                             </td>
                             <td class="px-4 py-8 whitespace-nowrap text-sm text-gray-500 text-center">
                                 <p class="inline-block font-medium text-sm text-green-700 bg-green-100 rounded-md px-2 py-1">
-                                    $<%= apartment.mo_rent.round %>
+                                    $<%=if apartment.mo_rent.nil? 
+                                            0 
+                                        else 
+                                            apartment.mo_rent.round 
+                                        end %>
                                 </p>
                             </td>
                             <td class="px-4 py-8 whitespace-nowrap text-sm text-gray-500 text-center">
