@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
   
     def update
       @group = Group.find params[:id]
-      @group.update_attribute(group_params)
+      @group.update(group_params)  # changed from .update_attributes!
       redirect_to group_apartments_path(@group)
     end
   

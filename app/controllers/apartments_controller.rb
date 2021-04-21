@@ -12,8 +12,6 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    puts "hello"
-    puts apartment_params
     @group = Group.find params[:group_id]
     @apartment = Apartment.create(apartment_params)
     redirect_to group_apartments_path(@group)
@@ -25,7 +23,7 @@ class ApartmentsController < ApplicationController
 
   def update
     @apartment = Apartment.find params[:id]
-    @apartment.update_attributes!(apartment_params)
+    @apartment.update(apartment_params)  # changed from .update_attributes!
     redirect_to apartment_path(@apartment)
   end
 

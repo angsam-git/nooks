@@ -1,39 +1,40 @@
 require 'rails_helper'
 
 describe GroupsController, type: :controller do
-
-	# let!(:group1) { FactoryBot.create(:group, id: 0, name: "id1") }
-
 	describe "Groups" do
-		
-		context 'There is a group' do
-			groupHash = {id: 1, name: "id1"}  # instead of FactoryBot
 
-			it 'test create' do
+		# let!(:group1) { FactoryBot.create(:group, id: 1, name: "id1") }
+		
+		context 'Testing apartments_controller functions' do
+			# groupHash = {id: group1.id, name: group1.name}
+			groupHash = {id: 1, name: "id1"}
+
+			it 'create' do
 				get :create, :params => {:group => groupHash}
             end
 
-            it 'test search' do
+            it 'search' do
 				get :create, :params => {:group => groupHash}
 				get :search, :params => {:group => groupHash}
             end
 
-			it 'test index' do
+			it 'index' do
 				# get :create, :params => {:group => groupHash}
 				get :index
             end
 
-			it 'test edit' do
+			### FAILURE	ActionController::MissingExactTemplate: GroupsController#edit is missing a template for request formats: text/html
+			it 'edit' do
 				get :create, :params => {:group => groupHash}
 				get :edit, :params => {:id => groupHash[:id]}
 			end
 
-			it 'test update' do
+			it 'update' do
 				get :create, :params => {:group => groupHash}
 				get :update, :params => {:id => groupHash[:id], :group => groupHash}
 			end
 
-			it 'test destroy' do
+			it 'destroy' do
 				get :create, :params => {:group => groupHash}
 				get :destroy, :params => {:id => groupHash[:id]}
 			end

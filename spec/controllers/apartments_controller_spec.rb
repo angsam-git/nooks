@@ -3,59 +3,58 @@ require 'rails_helper'
 describe ApartmentsController, type: :controller do
     describe "Apartments" do
   
-        let!(:group1) { FactoryBot.create(:group, id: 0, name: "id1") }
+        let!(:group1) { FactoryBot.create(:group, id: 1, name: "id1") }
 
-        let!(:apt1) { FactoryBot.create(:apartment, id: 0, address: '4 E 51st St, New York, NY 10022', mo_rent: 6170.0, num_beds: 2, num_baths: 2, sq_ft: 150000, url: 'www.streateasy.com', group_id: group1.id) }
-        let!(:apt2) { FactoryBot.create(:apartment, id: 1, address: '61 E 77st St, New York, NY 10075', mo_rent: 6981.0, num_beds: 1, num_baths: 2, sq_ft: 49000, url: 'www.streateasy.com', group_id: group1.id) }
+        let!(:apt1) { FactoryBot.create(:apartment, address: '4 E 51st St, New York, NY 10022', mo_rent: 6170.0, num_beds: 2, num_baths: 2, sq_ft: 150000, url: 'www.streateasy.com', group_id: group1.id, id: 1) }
+        let!(:apt2) { FactoryBot.create(:apartment, address: '61 E 77st St, New York, NY 10075', mo_rent: 6981.0, num_beds: 1, num_baths: 2, sq_ft: 49000, url: 'www.streateasy.com', group_id: group1.id, id: 2) }
 
 
-        context 'debugging' do
-            it 'trivial tests' do
+        context 'FactoryBot' do
+            it '...' do
                 expect(apt1.address).to eql('4 E 51st St, New York, NY 10022')
                 expect(apt2.num_beds).to eql(1)
-                expect(apt1.id).to eql(0)
+                expect(apt1.id).to eql(1)
             end
         end
 
+        context 'apartments_controller functions' do
+            # using hashes instead of FactoryBot
+            groupHash = {id: 1, name: "id1"}
+            aptHash1 = {id: 1, address: '4 E 51st St, New York, NY 10022', mo_rent: 6170.0, num_beds: 2, num_baths: 2, sq_ft: 150000, url: 'www.streateasy.com', group_id: groupHash[:id]}
+            aptHash2 = {id: 2, address: '61 E 77st St, New York, NY 10075', mo_rent: 6981.0, num_beds: 1, num_baths: 2, sq_ft: 49000, url: 'www.streateasy.com', group_id: groupHash[:id]}
 
-        # context 'test homepage' do
-        #     it '...' do
-        #         get :home
-        #         # get "/"
-        #         expect(response).to render_template(‘index’)
-        #         # expect(get("/")).to route_to("pages#home")
-        #     end
-        # end
+            it 'index' do
+				# get :index, :params => {:group_id => group1.id}
+                get :index, :params => {:group_id => groupHash[:id]}
+            end
 
+            it 'create' do
+				# post :create, :params => {:group_id => group1.id, :apartment => aptHash1}
+                post :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
+            end
 
-        # context 'A group created a new group id' do
-        #     it 'there should exist a corresponding route' do
-        #         # get :index
-        #         get :edit, :id => apt1.id
-        #         expect(response).to render_template(‘index’)
-        #         # expect(get("groups/#{apt1.group_id}/apartments")).to route_to("pages#id1")
-        #         # expect(get("/id1")).to route_to("pages#id1")
-        #         # expect(get('apartments/index/id1')).to route_to("pages#id1")
-        #         # expect(get("groups/#{apt1.group_id}/apartments")).to route_to("pages#id1") #Groups/groupid/apartments
-        #     end
+            #### ERROR    NameError: undefined local variable or method `apartments_path'
+            it 'destroy' do
+                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
+			    get :destroy, :params => {:group_id => group1.id, :id => aptHash1[:id]} #, :apartment => aptHash1}
+            end
 
-        #     it 'invalid id\'s should not receive a route' do
-        #         visit("/invalid")
-        #         expect(page.status_code).to be(404)
-        #     end
+            ### FAILURE
+            it 'edit' do
+                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
+			    get :edit, :params => {:group_id => group1.id, :id => aptHash1[:id]} #, :apartment => aptHash1}
+            end
 
-        #     it 'each group should only see their own listings, not other groups\' listings' do
-        #         visit("/id1")
-        #         expect(page).to have_content(apt1.address)
-        #         expect(page).not_to have_content(apt2.address)
-        #     end
-        # end
+            ### ERROR     NoMethodError: undefined method `apartment_path'
+            it 'update' do
+                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
+				# get :update, :params => {:group_id => group1.id, :apartment => aptHash1}
+                # get :update, :params => {:id => aptHash1[:id]}
+                get :update, :params => {:group_id => group1.id, :id => aptHash1[:id], :apartment => aptHash1}
+            end
+        end
 
-        # context 'An apartment listing has been added to the DB' do
-        #     it 'should appear on the apartments page' do
-        #         visit("/apartments").to have_content(apt2.address)
-        #     end
-        # end
+        
 
     end
 end

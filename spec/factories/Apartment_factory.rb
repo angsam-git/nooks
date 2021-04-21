@@ -12,6 +12,7 @@ FactoryBot.define do
   end
 
   factory :group do
+    id { 1 }
   	name { "default name" }
   end
 
