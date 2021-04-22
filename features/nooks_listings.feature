@@ -1,34 +1,31 @@
 Feature: display listings
 
     As an apartment hunter
-    So that I can see the apartments I'm currently following
-    I want to see which apartments I have added
+    So that I can find available apartments
+    I want to add and access my apartments listings
 
 Background: apartments in database
+    Given the following groups exist:
+    | name                  |
+    | nycbuds2021           |
+    | apartmenthunters      |
 
-    Given the following apartments exist:
-    | address                             | mo_rent | num_beds | num_baths | sq_ft | url
-    | 420 E 51st St, New York, NY 10022   | 6170.0  | 2        | 2.0       | 250   |
-    | 505 W 37th St, New York, NY 10022   | 2600.0  | 1        | 1.0       | 150   |
-    | 110 Wall Street, New York, NY 10022 | 3600.0  | 1        | 1.0       | 150   |
-    | 524 W 50th St, New York, NY 10022   | 1800.0  | 1        | 1.0       | 150   |
-    | 315 W 57th St, New York, NY 10022   | 3000.0  | 1        | 1.0       | 150   |
+Scenario: access group
+    Given I am on the Nooks home page
+    And I fill in "group_name" with "nycbuds2021"
+    And I press "Access group"
+    Then I should be on the group page for "nycbuds2021"
+    And I should see "nycbuds2021"
 
-
-    And I am on the Nooks apartments page
-    Then I should see all the apartments
-
-Scenario: find all apartments in apartments page
-    Given I am on the Nooks apartments page
-    Then I should see all the apartments
-
-Scenario: add an apartment to the apartments page
-    Given I am on the Nooks apartments page
+Scenario: add apartment
+    Given I am on the group page for "apartmenthunters"
     When I press "Add Apartment"
     And I fill in "Address" with "311 W 84th St, New York, NY"
     And I fill in "Monthly Rent" with "2200.0"
     And I fill in "Sq. Ft" with "250"
     And I fill in "Bedrooms" with "1"
     And I fill in "Bathrooms" with "1"
-    And I press "Add"
+    And I fill in "URL" with "https://www.zillow.com/"
+    And I press "Add apartment"
     Then I should see "311 W 84th St, New York, NY"
+    And I should see "apartmenthunters"

@@ -1,38 +1,15 @@
 class ApartmentsController < ApplicationController
-  def show
-  end
 
   def index
     @group = Group.find params[:group_id]
     @apartments = @group.apartments
   end
 
-  def new
-    # default: render 'new' template
-  end
 
   def create
-    puts "hello"
-    puts apartment_params
     @group = Group.find params[:group_id]
     @apartment = Apartment.create(apartment_params)
     redirect_to group_apartments_path(@group)
-  end
-
-  def edit
-    @apartment = Apartment.find params[:id]
-  end
-
-  def update
-    @apartment = Apartment.find params[:id]
-    @apartment.update_attributes!(apartment_params)
-    redirect_to apartment_path(@apartment)
-  end
-
-  def destroy
-    @apartment = Apartment.find(params[:id])
-    @apartment.destroy
-    redirect_to apartments_path
   end
 
   private
