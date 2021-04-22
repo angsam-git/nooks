@@ -18,18 +18,19 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'rspec-rails', '3.7.2' # added
-# gem 'factory_bot_rails'    # added
 gem 'rspec'
 gem 'rspec-rails'
 gem 'factory_bot'
+gem 'factory_bot_rails'    # added
+gem 'rails-controller-testing' #added for rspec testing
 
 
-# # added
-# group :test do
-#   gem 'cucumber-rails', :require => false
-#   gem 'cucumber-rails-training-wheels'
-#   gem 'simplecov', :require => false
-# end
+# added
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'simplecov', :require => false
+end
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
