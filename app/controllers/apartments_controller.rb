@@ -17,22 +17,6 @@ class ApartmentsController < ApplicationController
     redirect_to group_apartments_path(@group)
   end
 
-  def edit
-    @apartment = Apartment.find params[:id]
-  end
-
-  def update
-    @apartment = Apartment.find params[:id]
-    @apartment.update(apartment_params)  # changed from .update_attributes!
-    redirect_to apartment_path(@apartment)
-  end
-
-  def destroy
-    @apartment = Apartment.find(params[:id])
-    @apartment.destroy
-    redirect_to apartments_path
-  end
-
   private
   # Making "internal" methods private is not required, but is a common practice.
   # This helps make clear which methods respond to requests, and which ones do not.

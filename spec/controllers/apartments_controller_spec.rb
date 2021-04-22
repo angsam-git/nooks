@@ -32,29 +32,7 @@ describe ApartmentsController, type: :controller do
 				# post :create, :params => {:group_id => group1.id, :apartment => aptHash1}
                 post :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
             end
-
-            #### ERROR    NameError: undefined local variable or method `apartments_path'
-            it 'destroy' do
-                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
-			    get :destroy, :params => {:group_id => group1.id, :id => aptHash1[:id]} #, :apartment => aptHash1}
-            end
-
-            ### FAILURE
-            it 'edit' do
-                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
-			    get :edit, :params => {:group_id => group1.id, :id => aptHash1[:id]} #, :apartment => aptHash1}
-            end
-
-            ### ERROR     NoMethodError: undefined method `apartment_path'
-            it 'update' do
-                get :create, :params => {:group_id => groupHash[:id], :apartment => aptHash1}
-				# get :update, :params => {:group_id => group1.id, :apartment => aptHash1}
-                # get :update, :params => {:id => aptHash1[:id]}
-                get :update, :params => {:group_id => group1.id, :id => aptHash1[:id], :apartment => aptHash1}
-            end
         end
-
-        
 
     end
 end
