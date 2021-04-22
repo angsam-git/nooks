@@ -22,22 +22,6 @@ describe GroupsController, type: :controller do
 				# get :create, :params => {:group => groupHash}
 				get :index
             end
-
-			# ### FAILURE	ActionController::MissingExactTemplate: GroupsController#edit is missing a template for request formats: text/html
-			# it 'edit' do
-			# 	get :create, :params => {:group => groupHash}
-			# 	get :edit, :params => {:id => groupHash[:id]}
-			# end
-
-			it 'update' do
-				get :create, :params => {:group => groupHash}
-				get :update, :params => {:id => groupHash[:id], :group => groupHash}
-			end
-
-			it 'destroy' do
-				get :create, :params => {:group => groupHash}
-				get :destroy, :params => {:id => groupHash[:id]}
-			end
 		end
 
 	end
