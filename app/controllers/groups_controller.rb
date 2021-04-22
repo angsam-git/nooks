@@ -38,23 +38,7 @@ class GroupsController < ApplicationController
       end
       
     end
-  
-    def edit
-      @group = Group.find params[:id]
-    end
-  
-    def update
-      @group = Group.find params[:id]
-      @group.update(group_params)  # changed from .update_attributes!
-      redirect_to group_apartments_path(@group)
-    end
-  
-    def destroy
-      @group = Group.find(params[:id])
-      @group.destroy
-      redirect_to groups_path
-    end
-  
+
     private
     # Making "internal" methods private is not required, but is a common practice.
     # This helps make clear which methods respond to requests, and which ones do not.

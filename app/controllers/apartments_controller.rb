@@ -1,15 +1,10 @@
 class ApartmentsController < ApplicationController
-  def show
-  end
 
   def index
     @group = Group.find params[:group_id]
     @apartments = @group.apartments
   end
 
-  def new
-    # default: render 'new' template
-  end
 
   def create
     @group = Group.find params[:group_id]

@@ -13,8 +13,9 @@ module NavigationHelpers
     def path_to(page_name)
       case page_name
   
-      when /^the (Nooks )?apartments\s?page$/ then '/apartments'
-
+      when /^the (Nooks )?home\s?page$/ then '/'
+      when /^the group page for "(.*)"$/
+        group_apartments_path(Group.find_by_name($1))
       else
         begin
           page_name =~ /^the (.*) page$/
