@@ -141,48 +141,48 @@
       },
       "/home/angel/nooks/app/mailers/application_mailer.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/home/angel/nooks/app/jobs/application_job.rb": {
         "lines": [
-          0,
           null,
           null,
           null,
           null,
           null,
-          0
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/home/angel/nooks/app/channels/application_cable/connection.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/home/angel/nooks/app/channels/application_cable/channel.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1619058566
+    "timestamp": 1619059341
   }
 }
