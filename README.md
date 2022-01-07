@@ -1,12 +1,12 @@
 ## Team
 
-Angel Samuel Mendez - asm2265
+Angel Samuel Mendez
 
-Cameron Miller - cm3959
+Cameron Miller
 
-Alaz Sengul - as5456
+Alaz Sengul
 
-Alice Zhang - ayz2105
+Alice Zhang
 
 ## Installations
 
