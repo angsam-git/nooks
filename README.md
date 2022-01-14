@@ -14,7 +14,7 @@ Make sure you have the following already installed.
 
 ### Installing Ruby
 
-Check to see if you have Ruby version `2.5.0` or later.
+Check to see if you have Ruby version **2.5.0** or later.
 
 ```bash
 $ ruby --version
@@ -98,11 +98,3 @@ Run the following command in the `nooks` directory, open a browser window, and n
 ```bash
 $ bin/rails server
 ```
-
-## Heroku
-
-https://usenooks.herokuapp.com/
-
-## GitHub
-
-https://github.com/alazsengul/nooks
