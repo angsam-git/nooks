@@ -14,7 +14,7 @@ Make sure you have the following already installed.
 
 ### Installing Ruby
 
-Check to see if you have Ruby version `2.5.0` or later.
+Check to see if you have Ruby version **2.5.0** or later.
 
 ```bash
 $ ruby --version
